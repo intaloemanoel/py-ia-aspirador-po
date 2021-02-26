@@ -1,6 +1,5 @@
 import random
 
-
 class Agente(object):
     def __init__(self, quartos, posAtual, pontos):
         self.quartos = quartos
@@ -50,18 +49,17 @@ def main():
     # COMECA QUARTO A E COM 0 PONTOS
     aspirador = Agente(quartos, 0, 0)
 
-
     i = 0
     while i < 1000:
+        print(i)
+        i += 1
         acao(aspirador, quartos)
         if aspirador.posAtual == 0:
             randEstado(quartos, aspirador.posAtual + 1)
         elif aspirador.posAtual == 1:
             randEstado(quartos, aspirador.posAtual - 1)
-        i += 1
 
     print("A pontuacao foi:", aspirador.pontos)
-
 
 
 if __name__ == "__main__":
